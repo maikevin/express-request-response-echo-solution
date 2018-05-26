@@ -3,10 +3,11 @@ const app = express();
 
 // your code here!
 
-app.get('/echo:what', (req, res) => {res.json({
-    host: res.host,
+app.get('/echo/:what', (req, res) => {
+  res.json({
+    host: req.host,
     query: req.query,
-    params: req.params,
+    params: req.params
 });
 });
 
